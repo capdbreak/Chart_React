@@ -1,0 +1,11 @@
+{
+  "NVDA": {
+    "query": "nvidia OR nvda"
+  },
+  "AAPL": {
+    "query": "apple OR aapl"
+  },
+  "TSLA": {
+    "query": "tesla OR tsla"
+  }
+}

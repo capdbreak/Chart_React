@@ -40,3 +40,38 @@ index.js → App.jsx → TradingViewWidget.jsx
          └▶ 버튼 렌더링
          └▶ useEffect([symbol]): 차트 삽입
              └▶ TradingView 위젯 DOM 생성
+
+
+docker run -d --name my-postgres -e POSTGRES_USER=user -e POSTGRES_PASSWORD=password -e POSTGRES_DB=news -p 5434:5432 postgres:15
+
+ipconfig  
+
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
+npm run dev -- --host
+
+ngrok http 5173   
+
+# vite.config.ts 수정
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    host: true,
+    allowedHosts: true,
+    proxy: {
+      '/tickers': 'http://localhost:8000',
+      '/dates': 'http://localhost:8000',
+      '/news': 'http://localhost:8000',
+    }
+  }
+})
+
+
+tasklist | findstr uvicorn
+
+netstat -ano | findstr :8000
+
+taskkill /PID pidnum /F
